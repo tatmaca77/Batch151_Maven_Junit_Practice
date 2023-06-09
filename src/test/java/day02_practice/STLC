@@ -1,0 +1,30 @@
+
+
+
+Gecen Ders Notlari Ozet:
+
+SOFTWARE TESTING LIFE CYCLE
+1-Requirement Analysis --User Story
+User Story ID                      Description                                              Acceptance Criteria
+US 0002            Facebook login gecersiz kimlik                  Gecersiz kullanici adi ile erisim saglanmaz
+                                bilgileri ile erisilmemeli                              Gecersiz sifre ile erisim saglanamaz
+                                                                                          Gecersiz kullanici adi ve sifre ile erisim saglanamaz
+
+2-Test Planning --Test Plan, Software Requirement Specification SRS, Use Case Documents (Test Plan by Test lead-Test Manager)
+3-Test Case Development – Test Case( Test Case no, Priority, Test Name, Test Step, Result, Status, Test Data, BUG, Notes, Sprint No) Status: Done/Undone-Pass/Fail
+Test Case basliklari ornek: User Story Id, Test Objective, Pre-Condition, no, Steps, Test Data, Expected Result, Actual Result, Status
+Steps bolumu Selenium’da bize verilen odevler gibi. Su sayfaya gir, sunu tikla, sunu arat…
+Test Objective bolumu User Story’deki Acceptance Criteria icerir
+Pre-condition zorunlu bir alan degil, ancak olabilir
+Test Data: Bize veri olarak ne verilmisse ornegin websitesinin URL’I, username ve password olabilir
+Expected Result, ornegin kullanici erisim elde edememelidir
+Actual Result, ornegin kullanici erisim elde edemedi
+Status, ornegin pass ya da fail
+Test Case manuel ve otomation testler icin aynidir
+4-Environment Setup
+Dev Environment
+Test Environment (Test nerede, hangi ortamda gerceklesek)
+Stage Environment(stage olusturulur- Pre Prod(UAT)à canli bir ortam olusturulur
+Prod- Canli uretim
+5-Test Execution (Test execution islemi localde ya da Jenkins gibi programlar araciligi ile yapilabilir)
+6-Test Cycle Closure (Definition of Done)
