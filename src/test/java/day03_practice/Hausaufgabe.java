@@ -1,10 +1,7 @@
 package day03_practice;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -55,7 +52,20 @@ public class Hausaufgabe {
         System.out.println("Sonuc Sayisi: " + sonucSayisi);
         String beklenen = "100000000";
         Assert.assertFalse(sonucSayisi.equals(beklenen));
+    }
 
+    @Test @Ignore
+    public void ignore() {
+        System.out.println("Bu Test calismayacak.");
+    }
 
+    @After
+    public void tearDown() throws Exception {
+        driver.close();
+    }
+
+    @AfterClass
+    public static void afterClass() throws Exception {
+        System.out.println("Test hat beendet.");
     }
 }
