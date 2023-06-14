@@ -18,8 +18,8 @@ public abstract class TestBase01 {   // abstract yaptik ve bunun icinde obje olu
        TestBase Class'indan object olusturulmasinin önüne gecilmesi icin "abstract" yapilabilir.
      */
 
-    protected static WebDriver driver;    // Mutlaka access modifier "protected" olmalidir.
-    @Before                               // Bulundugu tüm package'larda görünmesi icn.
+    protected static WebDriver driver;    // Mutlaka access modifier "protected" veya "public" olmalidir.
+    @Before                               // Bulundugu tüm package'larda görünmesi icin.
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -29,6 +29,7 @@ public abstract class TestBase01 {   // abstract yaptik ve bunun icinde obje olu
 
     @After
     public void tearDown() throws Exception {
+        bekle(2);
         driver.quit();
     }
 

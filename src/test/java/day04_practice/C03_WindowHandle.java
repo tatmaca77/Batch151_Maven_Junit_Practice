@@ -33,9 +33,11 @@ public class C03_WindowHandle extends TestBase01 {
         String amazonUrl = driver.getCurrentUrl();
         Assert.assertTrue(amazonUrl.contains("amazon"));
 
+        bekle(2);
+
         // yeni bir pencere acip https://www.bestbuy.com sayfasina gidelim
         driver.switchTo().newWindow(WindowType.WINDOW);
-        driver.get("https://www.bestbuy.com");
+        driver.get("https://www.bestbuy.com");           /** Yeni sekme deseydi TAB kullanirdik. */
 
         // bestbuy sayfasinin handle degerini al.
         String beytBuyHandle = driver.getWindowHandle();
@@ -43,6 +45,8 @@ public class C03_WindowHandle extends TestBase01 {
         // title'in 'Best Buy' icerdigini test edelim
         String bestByTitle = driver.getTitle();
         Assert.assertTrue(bestByTitle.contains("Best Buy"));
+
+        bekle(2);
 
         // ilk sayfaya(amazon) donup sayfada java aratalım
         driver.switchTo().window(amazonHanldle);
@@ -54,6 +58,8 @@ public class C03_WindowHandle extends TestBase01 {
         String expectedText = "Java";
         System.out.println("Sonuc Yazisi : " + result.getText());
         Assert.assertTrue(result.getText().contains(expectedText));
+
+        bekle(2);
 
         // ikinci sayfaya(bestbuy) donelim
         driver.switchTo().window(beytBuyHandle);

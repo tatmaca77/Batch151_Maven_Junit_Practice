@@ -25,12 +25,12 @@ public class C04_Iframe extends TestBase01 {
         driver.get("https://html.com/tags/iframe");
 
         // Videoyu görecek kadar asagiya ininiz
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(driver);    /** Sayfayi asagiya veya yukariya kaydirmak icin Actions gereklidir. */
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
 
         // iframe handle etmeliyiz.
         WebElement iframe = driver.findElement(By.xpath("//iframe[@src='https://www.youtube.com/embed/owsfdh4gxyc']"));
-        driver.switchTo().frame(iframe);
+        driver.switchTo().frame(iframe);  /** Iframe handle etmeliyiz cünkü video baska bir ic ice web sitesinde */
 
         // Videoyu izlemek icin Play tusuna basiniz
         WebElement spielButton = driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button ytp-large-play-button-red-bg']"));
@@ -45,10 +45,10 @@ public class C04_Iframe extends TestBase01 {
 
         // Videoyu calistirdiginizi test ediniz
         WebElement youtubeYazisi = driver.findElement(By.xpath("//a[@class='ytp-youtube-button ytp-button yt-uix-sessionlink']"));
-        Assert.assertTrue(youtubeYazisi.isDisplayed()); //play gözükmüyorsacalismaya baslamis demektir
+        Assert.assertTrue(youtubeYazisi.isDisplayed()); //play gözükmüyorsa calismaya baslamis demektir
 
         // 'Powerful,but easy to misuse' yazısının gorunur oldugunu test ediniz
-        driver.switchTo().parentFrame();
+        driver.switchTo().parentFrame(); /** Distaki Web Sayfasina gecis yapmis oluruz. */
         WebElement poweredYazisi = driver.findElement(By.xpath("//span[text()='Powerful, but easy to misuse']"));
         Assert.assertTrue(poweredYazisi.isDisplayed());
 

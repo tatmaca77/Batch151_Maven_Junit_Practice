@@ -24,21 +24,20 @@ public class C02_Alert extends TestBase01 {
         driver.get("http://demo.guru99.com/test/delete_customer.php ");
 
         Thread.sleep(2000);
-                                                /** Anasayfa acildiginda Cerrez karsimiza cikioyr. */
+                                                /** Anasayfa acildiginda Cerez karsimiza cikiyor. */
         //cookie iframe code
         WebElement iframe = driver.findElement(By.xpath("//*[@id='gdpr-consent-notice']"));
         driver.switchTo().frame(iframe);
         driver.findElement(By.xpath("//*[@class='mat-focus-indicator solo-button mat-button mat-button-base mat-raised-button']")).click();
         driver.switchTo().parentFrame();
 
-        Thread.sleep(2000);
+        bekle(2);
 
         //customer id kısmına 53920 yazın
         WebElement customerId = driver.findElement(By.xpath("//input[@name='cusid']"));
         customerId.sendKeys("53920");
 
-
-        Thread.sleep(2000);
+       bekle(2);
 
         //submit butonuna tıklayın
         WebElement submit = driver.findElement(By.xpath("//input[@value='Submit']"));
@@ -50,12 +49,12 @@ public class C02_Alert extends TestBase01 {
         String alertYazisi = driver.switchTo().alert().getText();
         System.out.println("ALERT YAZISI "+alertYazisi);
 
-        Thread.sleep(2000);
+        bekle(2);
 
         //alerti kabul edin
-        driver.switchTo().alert().accept();
+        acceptAlert();
 
-        Thread.sleep(2000);
+        bekle(2);
 
         //cıkan 2. alert mesajını yazdırın
         String ikinciAlert = driver.switchTo().alert().getText();

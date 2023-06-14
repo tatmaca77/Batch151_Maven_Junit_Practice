@@ -35,7 +35,7 @@ public class C01_DropDownMenu extends TestBase01 {
         //select.selectByVisibleText("Bücher");
         //select.selectByIndex(5);
         //select.selectByValue("Bücher");
-        selectVisibleText(ddm,"Bücher");  // TestBase icinde bu methodlar oldugu vardir.
+        selectVisibleText(ddm,"Bücher");  // TestBase icinde bu methodlar oldugu icin 1 adimda hallettik!!!!
         bekle(2);
 
         // arama cubuguna "Java" aratın
