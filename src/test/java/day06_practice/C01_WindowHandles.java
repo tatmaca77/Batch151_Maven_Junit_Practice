@@ -27,6 +27,8 @@ public class C01_WindowHandles extends TestBase01 {
         String sayfa1Handle = driver.getWindowHandle();
         System.out.println("SAYFA1HANDLE: " + sayfa1Handle);
 
+        System.out.println("SAYFA1TITLE : " + driver.getTitle());
+
         Thread.sleep(2000);
 
         // arama motoruna 'Oppo' yazıp aratın
