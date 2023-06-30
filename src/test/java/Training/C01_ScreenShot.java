@@ -45,13 +45,5 @@ qa
         TakesScreenshot ts = (TakesScreenshot) driver; // Casting islemi yaptik esitledik ve hatayi ortadan kaldirdik.
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(filePath));
         bekle(2);
-
-
-
-
-
-
-
-
     }
 }
