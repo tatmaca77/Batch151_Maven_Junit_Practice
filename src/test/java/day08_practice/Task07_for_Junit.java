@@ -1,6 +1,7 @@
 package day08_practice;
 
 import org.bouncycastle.util.io.pem.PemReader;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -24,11 +25,32 @@ public class Task07_for_Junit extends TestBase01 {
 
 
         // -Kutucuk içindeki rengi önce kırmızı sonra sarı yapınız
-        WebElement gelbButton = driver.findElement(By.xpath("//div[@id='green']"));
 
-        Actions actions = new Actions(driver);
+        /** ( Kutucuklar "iframe" icerisindedir ) */
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+        driver.switchTo().frame(iframe);
 
-        actions.clickAndHold(gelbButton).sendKeys(Keys.RIGHT).perform();
+        WebElement gelbButton = driver.findElement(By.cssSelector("div#green>span"));
+        bekle(2);
+
+        Actions actions = new Actions(driver);  // Mouse hareketleri icin "Action" Classtan Object olusturulmalidir.
+
+        // Önce kirmizi yapiyoruz.
+        actions.moveToElement(gelbButton).clickAndHold(gelbButton).sendKeys(Keys.HOME).release().perform();
+
+        // Sonra Sari yapiyoruz.
+        actions.moveToElement(gelbButton).clickAndHold(gelbButton).sendKeys(Keys.END).release().perform();
+
+
+        // -Sarı olduğunu test edelim
+        WebElement gelbBox = driver.findElement(By.xpath("//div[@style='background-color: rgb(255, 255, 60);']"));
+        Assert.assertTrue(gelbBox.isDisplayed());
+
+        driver.switchTo().defaultContent(); // "iframe" icinde ana sayfasaya cikmis oluruz...!!!
+
+        // Iframe'den ciktiktan sonra Anasayfa üzerinde bir yazi testi yaptik.
+        WebElement title = driver.findElement(By.xpath("//h1[text()='Slider']"));
+        Assert.assertEquals("Slider", title.getText());
 
 
     }
