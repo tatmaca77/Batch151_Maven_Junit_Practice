@@ -35,14 +35,13 @@ public class C06_ReadExcel_TumVeriler {
                     + workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
 
             countryMaps.put(key,value);
-
-            /**
-            Genellikle bir Excel'deki tüm veriler istenirse bizim icin en güzel olani Map kullanmaktir. Cünkü Map
-            key-value iliskisine sahiptir. Ama bazen 2 den fazla sütun olabilir. Bu durumda :
-            key bulunduktan sonra , value icin kac tane sütun varsa + diyerek yanina ekleme yapabiliriz. !!!!!!
-             */
-
         }
 
+        System.out.println("Ulkeler Map : " + countryMaps);
     }
+    /**
+     Genellikle bir Excel'deki tüm veriler istenirse bizim icin en güzel olani Map kullanmaktir. Cünkü Map
+     key-value iliskisine sahiptir. Ama bazen 2 den fazla sütun olabilir. Bu durumda :
+     key bulunduktan sonra , value icin kac tane sütun varsa + diyerek yanina ekleme yapabiliriz. !!!!!!
+     */
 }
