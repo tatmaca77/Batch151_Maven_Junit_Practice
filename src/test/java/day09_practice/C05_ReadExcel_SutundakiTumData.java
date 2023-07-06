@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class C05_ReadExcel {
+public class C05_ReadExcel_SutundakiTumData {
 
     /**
      // Ulkeler dosyasındaki "Başkent (Türkce)" sutununu yazdırınız. ( Sütunun tamamini- for loop kullan !!!! )
