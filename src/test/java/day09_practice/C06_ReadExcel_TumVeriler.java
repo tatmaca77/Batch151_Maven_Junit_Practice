@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class C06_ReadExcel_TumVeriler {
 
@@ -25,7 +26,9 @@ public class C06_ReadExcel_TumVeriler {
         int lastRowNumIdx = workbook.getSheet("Sayfa1").getLastRowNum();
         System.out.println("(lastRowNumIdx+1) = " + (lastRowNumIdx+1));
 
-        Map<String,String> countryMaps = new HashMap<>();
+        //Map<String,String> countryMaps = new HashMap<>();//HashMap; rastgele siralama yaptigi icin cok hizlidir.
+
+        Map<String,String> countryMap = new TreeMap<>();//TreeMap; digerine göre daha yavastir. Dogal siralama yapar. !!!
 
         for (int i = 0; i < lastRowNumIdx; i++) {
 
@@ -34,10 +37,11 @@ public class C06_ReadExcel_TumVeriler {
                     + workbook.getSheet("Sayfa1").getRow(i).getCell(2).toString() + ", "
                     + workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
 
-            countryMaps.put(key,value);
+            countryMap.put(key,value);
+            //System.out.println(key + " / " + value);
         }
 
-        System.out.println("Ulkeler Map : " + countryMaps);
+        System.out.println("Ulkeler Map : " + countryMap);
     }
     /**
      Genellikle bir Excel'deki tüm veriler istenirse bizim icin en güzel olani Map kullanmaktir. Cünkü Map
