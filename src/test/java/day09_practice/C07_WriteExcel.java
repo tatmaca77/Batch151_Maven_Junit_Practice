@@ -32,6 +32,11 @@ public class C07_WriteExcel {
         workbook.getSheet("Sayfa1").getRow(2).createCell(4).setCellValue("25000");
         workbook.getSheet("Sayfa1").getRow(10).createCell(4).setCellValue("20000");
 
+        /**
+        Eger integer olarak girilen degeri belirtirsek sag yasli sekilde görünüt, ama eger String olarak belirtirsek
+        sola yasli olarak görünür. Bu bizim istegimize kalmistir.
+         */
+
 
         FileOutputStream fos = new FileOutputStream(filePath);
         // datalari bizim class'imizdan ülkeler dosyasina gönderecegiz. !!!!!
