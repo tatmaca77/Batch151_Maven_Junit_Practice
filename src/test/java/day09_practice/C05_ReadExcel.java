@@ -46,6 +46,8 @@ public class C05_ReadExcel {
      dem Namen der Klasse, in der sich die Methode befindet, in der wir verwenden möchten, und können später problemlos
      darauf zugreifen.
 
+     --> nicht statische Methode ==> instance Methode    --> non-static method
+
      */
 
     @Test

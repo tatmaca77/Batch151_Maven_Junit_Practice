@@ -39,8 +39,9 @@ public class C04_ReadExcel {
     public void excelReadTest02() throws IOException {
 
         /**
-        banaDataGetir methodunu C02 Classindan alicaz ve onu "static" yapmadik. Bu sekilde de islemi yapabiliriz.
+        banaDataGetir methodunu C02 Classindan alicaz ve onu "static" yapmadik . Bu sekilde de islemi yapabiliriz.
         Class ismi ile cagiramayiz, non-static olan methodlari kullanamak icin "Object" olusturmaliyiz. !!!!
+         --> non-static method ==> instance method
          */
         String filePath = "src/resources/ulkeler.xlsx";
         FileInputStream fis = new FileInputStream(filePath);
