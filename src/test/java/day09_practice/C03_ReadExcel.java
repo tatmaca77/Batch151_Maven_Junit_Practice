@@ -28,7 +28,7 @@ public class C03_ReadExcel {
 
     }
 
-    public String banaDataGetir(int rowNumIdx, int cellNumIdx) throws IOException {
+    public static String banaDataGetir(int rowNumIdx, int cellNumIdx) throws IOException {
 
         String filePath = "src/resources/ulkeler.xlsx";
         FileInputStream fis = new FileInputStream(filePath);

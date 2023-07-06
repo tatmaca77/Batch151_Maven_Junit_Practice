@@ -37,7 +37,7 @@ public class C01_ReadExcel {
 
     }
 
-    public String banaDataGetir(int rowNumIdx, int cellNumIdx) throws IOException {
+    public static String banaDataGetir(int rowNumIdx, int cellNumIdx) throws IOException {
 
         String filePath = "src/resources/ulkeler.xlsx"; // ContentRoot 'dan DosyaYolunu aldim.
         FileInputStream fis = new FileInputStream(filePath); // Ülkeler dosyasini bizim sistemimize getiriyor.
@@ -48,6 +48,12 @@ public class C01_ReadExcel {
         return istenenData;
 
     }
+
+    /**
+    Methodu "static" yaptik cünkü diger class'larda kullanmak istersek sadece "class ismi(.)" ile call yapabilmke icin. !!!!!
+
+     Bu konu JAVA'da --> ( static method --- non-static method )
+     */
 
 
 }
