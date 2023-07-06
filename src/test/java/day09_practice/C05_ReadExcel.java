@@ -38,6 +38,16 @@ public class C05_ReadExcel {
 
     }
 
+    /**
+          NOTE:
+
+    -->  Um eine statische Methode in einer anderen Klasse zu verwenden, verwenden wir den Klassennamen und den Punkt.
+     Wenn wir eine nicht-statische Methode in einer anderen Klasse verwenden möchten, erstellen wir ein neues Objekt mit
+     dem Namen der Klasse, in der sich die Methode befindet, in der wir verwenden möchten, und können später problemlos
+     darauf zugreifen.
+
+     */
+
     @Test
     public void excelReadTest02() throws IOException {
 
