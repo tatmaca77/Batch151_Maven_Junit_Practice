@@ -1,4 +1,4 @@
-package day08_practice;
+package Task_for_Junit;
 
 import org.bouncycastle.util.io.pem.PemReader;
 import org.junit.Assert;

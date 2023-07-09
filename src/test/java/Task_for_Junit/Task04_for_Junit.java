@@ -1,4 +1,4 @@
-package day04_practice;
+package Task_for_Junit;
 
 import org.junit.Assert;
 import org.junit.Test;

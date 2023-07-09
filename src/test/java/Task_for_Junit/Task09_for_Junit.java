@@ -1,4 +1,4 @@
-package day11_practice;
+package Task_for_Junit;
 
 import utilities.TestBase01;
 

@@ -1,4 +1,4 @@
-package day02_practice;
+package Task_for_Junit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
