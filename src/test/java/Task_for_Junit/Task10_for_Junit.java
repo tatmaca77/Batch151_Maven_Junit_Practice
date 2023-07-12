@@ -66,7 +66,6 @@ public class Task10_for_Junit extends TestBase01 {
 
 
 
-
         //Bütün Height bilgilerini yazdırınız
         List<WebElement> heights = driver.findElements(By.xpath("(//table)[2]//tbody//tr//td[3]"));
 
