@@ -27,9 +27,13 @@ public class Task09_for_Junit extends TestBase01 {
 
      */
 
+    /**
     ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
     ExtentHtmlReporter extentHtmlReporter; //-->Raporu HTML formatında düzenler
     ExtentTest extentTest; //--> Test adımlarına eklemek istediğimiz bilgileri bu class ile oluştururuz
+
+     */
+    ExtentTest extentTest;
 
     @Test
     public void test01() {
@@ -54,19 +58,17 @@ public class Task09_for_Junit extends TestBase01 {
 
         //Platforms Supported by Selenium altındaki Browsers bölümü görünene kadar sayfayı indirelim
         Actions actions = new Actions(driver);
-        WebElement browser = driver.findElement(By.xpath("(//button[contains(@class,'btn btn-dark')])[1]"));
-        actions.scrollToElement(browser);
+        WebElement browsers = driver.findElement(By.xpath("(//button[contains(@class,'btn btn-dark')])[1]"));
+        actions.scrollToElement(browsers).perform();
         extentTest.info("Browser WebElemntine kadar safya asagiya kaydirildi.");
 
-        bekle(1);
+        bekle(3);
 
 
 
         //Browser bölümünden Chrome driver bölümündeki documentation linkine tıklıyalım
-        browser.click();
         WebElement documentationChrome = driver.findElement(By.xpath("//a[@href='https://chromedriver.chromium.org/']"));
-        actions.scrollToElement(documentationChrome);
-        documentationChrome.click();
+        actions.scrollToElement(documentationChrome).click(documentationChrome).perform();
         extentTest.info("Browser WE tiklandi, DocumentationChrome'a kadar Scroll yapildi ve tiklandi.");
 
         bekle(2);
