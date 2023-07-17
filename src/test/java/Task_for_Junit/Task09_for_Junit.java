@@ -59,7 +59,7 @@ public class Task09_for_Junit extends TestBase01 {
         //Platforms Supported by Selenium altındaki Browsers bölümü görünene kadar sayfayı indirelim
         Actions actions = new Actions(driver);
         WebElement browsers = driver.findElement(By.xpath("(//button[contains(@class,'btn btn-dark')])[1]"));
-        actions.scrollToElement(browsers).perform();
+        actions.scrollToElement(browsers);
         extentTest.info("Browser WebElemntine kadar safya asagiya kaydirildi.");
 
         bekle(3);
@@ -67,8 +67,10 @@ public class Task09_for_Junit extends TestBase01 {
 
 
         //Browser bölümünden Chrome driver bölümündeki documentation linkine tıklıyalım
+        WebElement browser = driver.findElement(By.xpath("//button[@data-bs-target='#supported-browsers']"));
+        browser.click();
         WebElement documentationChrome = driver.findElement(By.xpath("//a[@href='https://chromedriver.chromium.org/']"));
-        actions.scrollToElement(documentationChrome).click(documentationChrome).perform();
+        documentationChrome.click();
         extentTest.info("Browser WE tiklandi, DocumentationChrome'a kadar Scroll yapildi ve tiklandi.");
 
         bekle(2);
