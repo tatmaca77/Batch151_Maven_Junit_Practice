@@ -42,10 +42,14 @@ public class Task09_for_Junit extends TestBase01 {
         driver.navigate().to("https://www.selenium.dev/downloads/");
         extentTest.info("Selenium Dev sayfasina gidildi.");
 
+        bekle(1);
+
 
         //Sayfanın resmini alalım
         tumSayfaResmi();
         extentTest.info("Tum Sayfanin ekran görüntüsü alindi.");
+
+        bekle(1);
 
 
         //Platforms Supported by Selenium altındaki Browsers bölümü görünene kadar sayfayı indirelim
@@ -53,6 +57,8 @@ public class Task09_for_Junit extends TestBase01 {
         WebElement browser = driver.findElement(By.xpath("(//button[contains(@class,'btn btn-dark')])[1]"));
         actions.scrollToElement(browser);
         extentTest.info("Browser WebElemntine kadar safya asagiya kaydirildi.");
+
+        bekle(1);
 
 
 
@@ -63,12 +69,16 @@ public class Task09_for_Junit extends TestBase01 {
         documentationChrome.click();
         extentTest.info("Browser WE tiklandi, DocumentationChrome'a kadar Scroll yapildi ve tiklandi.");
 
+        bekle(2);
+
 
 
         //Documentation webelementinin resmini alalım
         WebElement documentation = driver.findElement(By.xpath("(//a[text()='Documentation'])[2]"));
         webElementResmi(documentation);
         extentTest.info("Documentation WebElemnti'nin ekran resmi alindi.");
+
+        bekle(1);
 
 
 
@@ -78,11 +88,15 @@ public class Task09_for_Junit extends TestBase01 {
         driver.findElement(By.xpath("//a[text()='https://chromedriver.storage.googleapis.com/LATEST_RELEASE']")).click(); // Linke Tikla
         extentTest.info("Latest stable release linkine tiklandi.");
 
+        bekle(2);
+
 
 
         //Açılan pencerede chromedriver'in version numarasini görelim
         WebElement versionNo = driver.findElement(By.xpath("//pre[text()='114.0.5735.90']"));
         extentTest.info("Acilan Pencerede Version Numarasi görüldü.");
+
+        bekle(1);
 
 
 
@@ -91,36 +105,7 @@ public class Task09_for_Junit extends TestBase01 {
         Assert.assertEquals(expectedVersionNo,versionNo.getText());
         extentTest.info("Version numarali karsilastirildi.");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        bekle(1);
 
 
     }
