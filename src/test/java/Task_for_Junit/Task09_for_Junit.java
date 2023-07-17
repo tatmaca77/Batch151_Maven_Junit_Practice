@@ -3,8 +3,10 @@ package Task_for_Junit;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase01;
@@ -71,9 +73,25 @@ public class Task09_for_Junit extends TestBase01 {
 
 
         //All versions available in Downloads altında Latest stable release olan linki tıklayalım
-        driver.findElement(By.xpath("(//a[@data-url='/downloads'])[2]")).click();  //
-        driver.findElement(By.xpath("//span[text()='Version Selection']")).click();
-        driver.findElement(By.xpath("//a[text()='https://chromedriver.storage.googleapis.com/LATEST_RELEASE']")).click();
+        driver.findElement(By.xpath("(//a[@data-url='/downloads'])[2]")).click();  // Downloads tikla
+        driver.findElement(By.xpath("//span[text()='Version Selection']")).click(); // Version selection tikla
+        driver.findElement(By.xpath("//a[text()='https://chromedriver.storage.googleapis.com/LATEST_RELEASE']")).click(); // Linke Tikla
+        extentTest.info("Latest stable release linkine tiklandi.");
+
+
+
+        //Açılan pencerede chromedriver'in version numarasini görelim
+        WebElement versionNo = driver.findElement(By.xpath("//pre[text()='114.0.5735.90']"));
+        extentTest.info("Acilan Pencerede Version Numarasi görüldü.");
+
+
+
+        //Açılan pencerede chromedriver'in version numarasi "114.0.5735.90" oldugunu dogrula
+        String expectedVersionNo = "114.0.5735.90";
+        Assert.assertEquals(expectedVersionNo,versionNo.getText());
+        extentTest.info("Version numarali karsilastirildi.");
+
+
 
 
 
