@@ -1,5 +1,8 @@
 package Task_for_Junit;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -21,6 +24,10 @@ public class Task09_for_Junit extends TestBase01 {
 //Not: Bu task'in her adımı için Html rapor oluşturalım(Extent Report)
 
      */
+
+    ExtentReports extentReports; //-->Raporlamayı başlatmak için kullanılan class
+    ExtentHtmlReporter extentHtmlReporter; //-->Raporu HTML formatında düzenler
+    ExtentTest extentTest;
 
     @Test
     public void test01() {
